@@ -26,8 +26,8 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build --tag sergio62/graphql:0.0.1 .
+        docker build --tag sergio62/graphql2:0.0.1 .
 
     - name: Push Docker Image
       run: |
-        docker push sergio62/graphql:0.0.1 .
+        docker push sergio62/graphql2:0.0.1 .
