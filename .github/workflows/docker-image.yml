@@ -36,11 +36,15 @@ jobs:
         #Y PASSSWORD
 
     - name: Build Docker Image
+      env: 
+        NEW_VERSION: ${{ step.version.outputs.version }}
       run: |
-        docker build -t sergio62/graphql2:0.0.3 .
+        docker build -t sergio62/graphql2:$NEW_VERSION .
         docker build -t sergio62/graphql2:latest .
 
     - name: Push Docker Image
+      env: 
+        NEW_VERSION: ${{ step.version.outputs.version }}
       run: |
-        docker push sergio62/graphql2:0.0.3
+        docker push sergio62/graphql2:$NEW_VERSION
         docker push sergio62/graphql2:latest
